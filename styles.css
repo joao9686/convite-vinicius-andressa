@@ -934,3 +934,230 @@ body{
 .back-button:active{
   transform:scale(.97);
 }
+
+/* RESPONSIVIDADE CELULAR - AJUSTE FINAL */
+
+@media (max-width: 480px) {
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .page {
+    min-height: 100svh;
+    padding: 10px;
+    align-items: flex-start;
+  }
+
+  .invitation,
+  .card {
+    width: min(100%, 390px);
+    height: min(700px, calc(100svh - 20px));
+    min-height: 640px;
+  }
+
+  .card-border {
+    inset: 12px;
+    border-radius: 22px;
+  }
+
+  .cover-content {
+    padding: 38px 24px 28px;
+  }
+
+  .couple-names {
+    margin: 58px 0 36px;
+  }
+
+  .couple-names h1 {
+    font-size: 48px;
+  }
+
+  .couple-names span {
+    font-size: 28px;
+    margin: 4px 0;
+  }
+
+  .cover-date {
+    gap: 8px;
+    margin-bottom: 26px;
+  }
+
+  .cover-date p {
+    font-size: 10px;
+    letter-spacing: 1.2px;
+  }
+
+  .date-main {
+    padding: 0 10px;
+  }
+
+  .date-main strong {
+    font-size: 56px;
+  }
+
+  .date-main em {
+    font-size: 18px;
+  }
+
+  .address {
+    margin-bottom: 26px;
+    font-size: 13px;
+  }
+
+  .primary-button {
+    padding: 12px 22px;
+    font-size: 11px;
+  }
+
+  .decor-leaves {
+    width: 115px;
+  }
+
+  .decor-leaves-top {
+    top: -28px;
+    left: -28px;
+  }
+
+  .decor-leaves-bottom {
+    right: -22px;
+    bottom: -18px;
+  }
+
+  .cover-flower-top-right {
+    width: 190px;
+    top: -42px;
+    right: -52px;
+  }
+
+  .cover-flower-bottom-left {
+    width: 110px;
+    left: -8px;
+    bottom: -6px;
+  }
+
+  .inside-content {
+    padding: 30px 24px 18px;
+  }
+
+  .monogram-img {
+    width: 66px;
+    margin-bottom: 6px;
+  }
+
+  .verse {
+    font-size: 11px;
+    line-height: 1.18;
+    margin-bottom: 10px;
+  }
+
+  .blessing {
+    font-size: 13px;
+    line-height: 1.15;
+    margin-bottom: 9px;
+  }
+
+  .parents {
+    max-width: 280px;
+    gap: 18px;
+    font-size: 13.5px;
+    line-height: 1.05;
+    margin-bottom: 9px;
+  }
+
+  .initials-png {
+    gap: 14px;
+    margin: 2px 0 9px;
+  }
+
+  .letter-a,
+  .letter-v {
+    width: 66px;
+  }
+
+  .letter-e {
+    width: 30px;
+  }
+
+  .invite-title {
+    font-size: 13.5px;
+    margin-bottom: 7px;
+  }
+
+  .event-box {
+    max-width: 260px;
+    margin-bottom: 10px;
+  }
+
+  .event-box div {
+    padding: 6px 5px;
+    font-size: 13px;
+  }
+
+  .ceremony-info {
+    margin-bottom: 9px;
+  }
+
+  .ceremony-info strong {
+    font-size: 12px;
+  }
+
+  .ceremony-info p {
+    font-size: 10px;
+  }
+
+  .final-info {
+    font-size: 10.8px;
+    line-height: 1.05;
+  }
+
+  .final-info p {
+    margin-bottom: 4px;
+  }
+
+  .final-info p:nth-child(2) strong {
+    font-size: 13px;
+  }
+
+  .back-button {
+    margin-top: 4px;
+    padding: 5px 13px;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 360px) {
+  .invitation,
+  .card {
+    min-height: 610px;
+  }
+
+  .couple-names h1 {
+    font-size: 43px;
+  }
+
+  .date-main strong {
+    font-size: 50px;
+  }
+
+  .inside-content {
+    padding: 24px 20px 14px;
+  }
+
+  .letter-a,
+  .letter-v {
+    width: 58px;
+  }
+
+  .letter-e {
+    width: 26px;
+  }
+
+  .parents {
+    font-size: 12.5px;
+  }
+
+  .final-info {
+    font-size: 10px;
+  }
+}
