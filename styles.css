@@ -1,0 +1,936 @@
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+  --paper:#fffaf1;
+  --green:#2f4f3d;
+  --green-soft:#6d8560;
+  --gold:#bd9850;
+  --shadow:0 28px 70px rgba(34,42,28,.24);
+}
+
+body{
+  min-height:100vh;
+
+  background:
+    radial-gradient(circle at top left, rgba(184,207,166,.42), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(214,187,133,.35), transparent 36%),
+    linear-gradient(135deg,#f8f3ea,#eee4d1);
+
+  font-family:"Cormorant Garamond", serif;
+
+  overflow:hidden;
+}
+
+/* CENTRALIZAÇÃO */
+
+.page{
+  width:100%;
+  min-height:100vh;
+
+  padding:20px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* CONTAINER */
+
+.invitation{
+  width:430px;
+  max-width:100%;
+  height:740px;
+
+  position:relative;
+  perspective:1400px;
+}
+
+/* CARDS */
+
+.card{
+  position:absolute;
+  top:0;
+  left:0;
+
+  width:430px;
+  max-width:100%;
+  height:740px;
+
+  border-radius:32px;
+  overflow:hidden;
+
+  background:var(--paper);
+
+  border:1px solid rgba(180,146,83,.42);
+
+  box-shadow:var(--shadow);
+
+  transition:
+    transform .9s cubic-bezier(.22,.8,.25,1),
+    opacity .7s ease;
+}
+
+/* CAPA */
+
+.card-cover{
+  z-index:2;
+  opacity:1;
+  transform:rotateY(0deg) scale(1);
+}
+
+.card-cover.is-hidden{
+  opacity:0;
+  transform:rotateY(-96deg) scale(.94);
+
+  pointer-events:none;
+}
+
+/* INTERIOR */
+
+.card-inside{
+  opacity:0;
+  transform:rotateY(96deg) scale(.94);
+
+  pointer-events:none;
+
+  z-index:1;
+}
+
+.card-inside.is-visible{
+  opacity:1;
+  transform:rotateY(0deg) scale(1);
+
+  pointer-events:auto;
+
+  z-index:5;
+}
+
+/* BORDA */
+
+.card-border{
+  position:absolute;
+  inset:17px;
+
+  border:1px solid rgba(183,148,75,.72);
+  border-radius:25px;
+
+  z-index:3;
+}
+
+/* DECORAÇÕES */
+
+.decor{
+  position:absolute;
+  pointer-events:none;
+}
+
+/* FOLHAS */
+
+.decor-leaves{
+  width:150px;
+}
+
+.decor-leaves-top{
+  top:-40px;
+  left:-39px;
+}
+
+.decor-leaves-bottom{
+  right:-28px;
+  bottom:-24px;
+
+  transform:rotate(180deg);
+}
+
+/* FLORES CAPA */
+
+.cover-flower{
+  z-index:4;
+}
+
+.cover-flower-top-right{
+  width:300px;
+
+  top:-65px;
+  right:-77px;
+
+  transform:rotate(10deg);
+}
+
+.cover-flower-bottom-left{
+  width:150px;
+
+  left:-12px;
+  bottom:-11px;
+
+  transform:rotate(1deg);
+
+  opacity:.95;
+
+  z-index:4;
+}
+
+
+.cover-flower-top-left{
+  width:92px;
+
+  top:92px;
+  left:22px;
+
+  transform:scaleX(-1) rotate(-8deg);
+
+  opacity:.8;
+}
+
+
+
+
+
+
+
+/* CONTEÚDO CAPA */
+
+.cover-content{
+  position:relative;
+  z-index:5;
+
+  width:100%;
+  height:100%;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+
+  padding:52px 34px;
+}
+
+/* CONTEÚDO INTERIOR */
+
+.inside-content{
+  position:relative;
+  z-index:5;
+
+  width:100%;
+  height:100%;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+
+  padding:36px 30px;
+}
+
+/* SÍMBOLO */
+
+.symbol{
+  position:absolute;
+  top:48px;
+
+  color:var(--green);
+
+  font-size:30px;
+}
+
+/* NOMES */
+
+.couple-names{
+  margin:78px 0 46px;
+  
+}
+
+.couple-names h1{
+  font-family:'Pinyon Script', cursive;
+  font-size:60px;
+  font-style:italic;
+  font-weight:400;
+  line-height:1.05;
+
+  color:#42453b;
+}
+
+.couple-names span{
+  display:block;
+
+  margin:8px 0;
+
+  color:var(--green-soft);
+
+  font-size:33px;
+}
+
+/* DATA */
+
+.cover-date{
+  width:100%;
+
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+
+  align-items:center;
+  gap:12px;
+
+  margin-bottom:38px;
+}
+
+.cover-date p{
+  font-family:"Montserrat", sans-serif;
+
+  font-size:13px;
+
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+.date-main{
+  padding:0 16px;
+
+  border-left:2px solid var(--gold);
+  border-right:2px solid var(--gold);
+}
+
+.date-main small{
+  display:block;
+
+  color:var(--green);
+
+  font-family:"Montserrat", sans-serif;
+
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+.date-main strong{
+  display:block;
+
+  color:var(--green);
+
+  font-size:70px;
+  line-height:.85;
+  font-weight:400;
+}
+
+.date-main em{
+  display:block;
+
+  margin-top:8px;
+
+  font-size:24px;
+  font-style:normal;
+}
+
+/* ENDEREÇO */
+
+.address{
+  margin-bottom:38px;
+
+  font-family:"Montserrat", sans-serif;
+}
+
+/* BOTÕES */
+
+.primary-button{
+  padding:14px 28px;
+
+  border:none;
+  border-radius:999px;
+
+  background:var(--green);
+  color:white;
+
+  font-family:"Montserrat", sans-serif;
+
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+
+  cursor:pointer;
+
+  transition:.25s;
+}
+
+.primary-button:hover{
+  transform:translateY(-2px);
+
+  background:#24402f;
+}
+
+/* INTERIOR */
+
+.monogram-img{
+  width:145px;
+
+  margin-bottom:16px;
+}
+
+.verse{
+  max-width:340px;
+
+  margin-bottom:18px;
+
+  font-size:14px;
+  line-height:1.55;
+  font-style:italic;
+}
+
+.blessing{
+  font-family:"Cinzel", serif;
+
+  margin-bottom:18px;
+
+  font-size:18px;
+
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+.parents{
+  width:100%;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:18px;
+
+  margin-bottom:20px;
+}
+
+.invite-title{
+  font-family:"Cinzel", serif;
+
+  margin-bottom:18px;
+
+  font-size:18px;
+
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+/* DATA INTERIOR */
+
+.event-box{
+  width:100%;
+  max-width:320px;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  border-top:1px solid #8c8065;
+  border-bottom:1px solid #8c8065;
+}
+
+.event-box div{
+  padding:12px 8px;
+
+  font-size:18px;
+}
+
+.event-box div:first-child{
+  border-right:1px solid #8c8065;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:480px){
+
+  .invitation,
+  .card{
+    width:100%;
+    height:700px;
+  }
+
+  .couple-names h1{
+    font-size:52px;
+  }
+
+  .date-main strong{
+    font-size:60px;
+  }
+
+  .decor-leaves{
+    width:150px;
+  }
+
+  .decor-flowers-top,
+  .decor-flowers-bottom{
+    width:100px;
+  }
+
+  .cover-flower-top-right{
+    width:100px;
+  }
+
+  .cover-flower-top-left{
+    width:72px;
+  }
+}
+
+.inside-content{
+  justify-content:flex-start;
+  padding:58px 30px 24px;
+}
+
+.monogram-img{
+  width:105px;
+  margin-bottom:8px;
+}
+
+.verse{
+  font-size:12px;
+  line-height:1.35;
+  margin-bottom:10px;
+}
+
+.blessing{
+  font-size:16px;
+  margin-bottom:10px;
+}
+
+.parents{
+  margin-bottom:8px;
+  font-size:13px;
+}
+
+.initials-png{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:22px;
+  margin:6px 0 10px;
+}
+
+.letter-img{
+  object-fit:contain;
+  display:block;
+}
+
+.letter-a,
+.letter-v{
+  width:78px;
+}
+
+.letter-e{
+  width:34px;
+}
+
+.invite-title{
+  font-size:16px;
+  margin-bottom:10px;
+}
+
+.event-box{
+  margin-bottom:12px;
+}
+
+.event-box div{
+  padding:8px 8px;
+  font-size:16px;
+}
+
+.ceremony-info{
+  font-family:"Cormorant Garamond", serif;
+
+  text-align:center;
+
+  font-size:16px;
+  line-height:1.2;
+
+  color:#3d3b36;
+}
+
+.ceremony-info strong{
+  display:block;
+
+  font-family:"Cinzel", serif;
+
+  font-size:20px;
+  font-weight:400;
+
+  letter-spacing:1px;
+
+  margin-bottom:2px;
+}
+
+.ceremony-info p{
+  font-size:15px;
+}
+
+.final-info{
+  margin-top:12px;
+
+  font-family:"Cormorant Garamond", serif;
+
+  font-size:15px;
+  line-height:1.15;
+
+  text-align:center;
+
+  color:#3d3b36;
+}
+
+.final-info strong{
+  font-family:"Cinzel", serif;
+
+  font-weight:400;
+
+  letter-spacing:.5px;
+}
+
+/* AJUSTE FINO DO INTERIOR - MAIS PARECIDO COM A REFERÊNCIA */
+
+.inside-content{
+  justify-content:flex-start;
+  padding:38px 34px 22px;
+}
+
+.monogram-img{
+  width:82px;
+  margin-bottom:10px;
+}
+
+.verse{
+  max-width:310px;
+  font-size:12.5px;
+  line-height:1.28;
+  margin-bottom:18px;
+}
+
+.blessing{
+  max-width:360px;
+  font-size:17px;
+  line-height:1.2;
+  letter-spacing:1.5px;
+  margin-bottom:16px;
+}
+
+.parents{
+  max-width:320px;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:34px;
+
+  margin-bottom:18px;
+
+  text-align:center;
+
+  font-family:"Cormorant Garamond", serif;
+
+  font-size:17px;
+  line-height:1.15;
+
+  color:#3d3b36;
+}
+
+.parents p{
+  margin-bottom:4px;
+}
+
+.initials-png{
+  gap:24px;
+  margin:4px 0 16px;
+}
+
+.letter-a,
+.letter-v{
+  width:100px;
+}
+
+.letter-e{
+  width:50px;
+  opacity:.75;
+}
+
+.invite-title{
+  max-width:370px;
+  font-size:17px;
+  line-height:1.15;
+  letter-spacing:1.3px;
+  margin-bottom:8px;
+}
+
+.event-box{
+  max-width:300px;
+  margin-bottom:18px;
+}
+
+.event-box div{
+  padding:7px 8px;
+  font-size:17px;
+  line-height:1;
+}
+
+.ceremony-info{
+  margin-top:0;
+  margin-bottom:18px;
+  font-family:"Cormorant Garamond", serif;
+  text-align:center;
+  color:#3d3b36;
+}
+
+.ceremony-info strong{
+  display:block;
+  font-family:"Cinzel", serif;
+  font-size:15px;
+  font-weight:500;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+  line-height:1.1;
+}
+
+.ceremony-info p{
+  font-size:11px;
+  line-height:1.1;
+  margin-top:2px;
+}
+
+.final-info{
+  margin-top:0;
+  max-width:310px;
+  font-family:"Cormorant Garamond", serif;
+  font-size:13px;
+  line-height:1.15;
+  text-align:center;
+  color:#3d3b36;
+}
+
+.final-info p{
+  margin-bottom:7px;
+}
+
+.final-info p:first-child{
+  font-size:12px;
+  line-height:1.2;
+}
+
+.final-info strong{
+  font-family:"Cinzel", serif;
+  font-weight:500;
+  text-transform:uppercase;
+  letter-spacing:.4px;
+}
+
+.final-info p:nth-child(2) strong{
+  font-family:"Cormorant Garamond", serif;
+  text-transform:none;
+  font-size:16px;
+  font-weight:500;
+}
+
+.final-info p:nth-child(4){
+  font-family:"Cinzel", serif;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.3px;
+  margin-top:4px;
+}
+
+/* ANIMAÇÃO SUAVE E ELEGANTE */
+
+.card{
+  backface-visibility:hidden;
+  will-change:transform, opacity, filter;
+}
+
+.card-cover{
+  transform:scale(1);
+}
+
+.card-cover.is-opening{
+  animation:coverFadeOutElegant 1.05s ease forwards;
+}
+
+.card-cover.is-returning{
+  animation:coverFadeInElegant 1.05s ease forwards;
+}
+
+.card-inside{
+  opacity:0;
+  transform:scale(.985) translateY(14px);
+  pointer-events:none;
+  z-index:1;
+}
+
+.card-inside.is-visible{
+  opacity:1;
+  transform:scale(1) translateY(0);
+  pointer-events:auto;
+  z-index:5;
+  animation:insideFadeInElegant 1.05s ease forwards;
+}
+
+.card-inside.is-closing{
+  animation:insideFadeOutElegant .8s ease forwards;
+}
+
+@keyframes coverFadeOutElegant{
+  0%{
+    opacity:1;
+    transform:scale(1) translateY(0);
+    filter:blur(0);
+  }
+
+  100%{
+    opacity:0;
+    transform:scale(1.018) translateY(-8px);
+    filter:blur(2px);
+  }
+}
+
+@keyframes coverFadeInElegant{
+  0%{
+    opacity:0;
+    transform:scale(.985) translateY(8px);
+    filter:blur(2px);
+  }
+
+  100%{
+    opacity:1;
+    transform:scale(1) translateY(0);
+    filter:blur(0);
+  }
+}
+
+@keyframes insideFadeInElegant{
+  0%{
+    opacity:0;
+    transform:scale(.982) translateY(16px);
+    filter:blur(3px);
+  }
+
+  100%{
+    opacity:1;
+    transform:scale(1) translateY(0);
+    filter:blur(0);
+  }
+}
+
+@keyframes insideFadeOutElegant{
+  0%{
+    opacity:1;
+    transform:scale(1) translateY(0);
+    filter:blur(0);
+  }
+
+  100%{
+    opacity:0;
+    transform:scale(.982) translateY(14px);
+    filter:blur(3px);
+  }
+}
+
+/* AJUSTE PARA CABER O BOTÃO NO INTERIOR */
+
+.inside-content{
+  padding:42px 34px 26px;
+}
+
+.monogram-img{
+  width:76px;
+  margin-bottom:8px;
+}
+
+.verse{
+  font-size:12px;
+  line-height:1.23;
+  margin-bottom:16px;
+}
+
+.blessing{
+  font-size:16px;
+  line-height:1.15;
+  margin-bottom:12px;
+}
+
+.parents{
+  font-size:16px;
+  line-height:1.1;
+  margin-bottom:15px;;
+}
+
+.parents p{
+  margin-bottom:2px;
+}
+
+.initials-png{
+  margin:6px 0 15px;
+}
+
+.letter-a,
+.letter-v{
+  width:88px;
+}
+
+.letter-e{
+  width:42px;
+}
+
+.invite-title{
+  font-size:16px;
+  line-height:1.1;
+  margin-bottom:8px;
+}
+
+.event-box{
+  max-width:295px;
+  margin-bottom:15px;
+}
+
+.event-box div{
+  padding:7px 8px;
+  font-size:16px;
+}
+
+.ceremony-info{
+  margin-bottom:14px;
+}
+
+.ceremony-info strong{
+  font-size:14px;
+}
+
+.final-info{
+  font-size:12.5px;
+  line-height:1.08;
+}
+
+.final-info p{
+  margin-bottom:5px;
+}
+
+/* BOTÃO VOLTAR NO MESMO ESTILO DO CONVITE */
+
+.back-button{
+  margin-top:10px;
+
+  padding:6px 16px;
+
+  border:none;
+  border-top:1px solid rgba(47,79,61,.35);
+  border-bottom:1px solid rgba(47,79,61,.35);
+
+  background:transparent;
+  color:#3d3b36;
+
+  font-family:"Cinzel", serif;
+  font-size:10px;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+
+  cursor:pointer;
+}
+
+.back-button:active{
+  transform:scale(.97);
+}
