@@ -8,6 +8,8 @@ let animando = false;
 function abrirConvite() {
   if (animando) return;
   animando = true;
+  
+  iniciarMusica();
 
   cover.classList.add("is-opening");
 
@@ -50,4 +52,45 @@ openInvitation.addEventListener("click", (event) => {
 
 if (backToCover) {
   backToCover.addEventListener("click", voltarParaCapa);
+}
+const weddingMusic = document.getElementById("weddingMusic");
+const musicPlayer = document.getElementById("musicPlayer");
+const musicToggle = document.getElementById("musicToggle");
+const musicProgressBar = document.getElementById("musicProgressBar");
+
+let musicaIniciada = false;
+
+function iniciarMusica() {
+  if (!weddingMusic || !musicPlayer) return;
+
+  musicPlayer.classList.add("is-visible");
+
+  if (!musicaIniciada) {
+    weddingMusic.volume = 0.55;
+    weddingMusic.play().catch(() => {});
+    musicaIniciada = true;
+  }
+}
+
+if (musicToggle) {
+  musicToggle.addEventListener("click", (event) => {
+    event.stopPropagation();
+
+    if (weddingMusic.paused) {
+      weddingMusic.play();
+      musicToggle.textContent = "⏸";
+    } else {
+      weddingMusic.pause();
+      musicToggle.textContent = "▶";
+    }
+  });
+}
+
+if (weddingMusic) {
+  weddingMusic.addEventListener("timeupdate", () => {
+    if (!weddingMusic.duration) return;
+
+    const progresso = (weddingMusic.currentTime / weddingMusic.duration) * 100;
+    musicProgressBar.style.width = `${progresso}%`;
+  });
 }

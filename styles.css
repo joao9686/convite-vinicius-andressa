@@ -1161,3 +1161,127 @@ body{
     font-size: 10px;
   }
 }
+
+.music-player {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+
+  width: min(92%, 390px);
+
+  padding: 10px 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  background: rgba(28, 28, 24, 0.92);
+  color: #fff;
+
+  border-radius: 18px;
+
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+
+  transform: translateX(-50%) translateY(120%);
+  opacity: 0;
+  pointer-events: none;
+
+  z-index: 999;
+
+  transition: 0.45s ease;
+}
+
+.music-player.is-visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.music-cover {
+  width: 48px;
+  height: 48px;
+
+  object-fit: cover;
+
+  border-radius: 10px;
+
+  background: #fffaf1;
+}
+
+.music-info {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.music-info strong {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 16px;
+  font-weight: 500;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.music-info span {
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+
+  opacity: 0.75;
+}
+
+.music-progress {
+  width: 100%;
+  height: 4px;
+
+  margin-top: 7px;
+
+  background: rgba(255, 255, 255, 0.22);
+
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.music-progress-bar {
+  width: 0%;
+  height: 100%;
+
+  background: #fffaf1;
+
+  border-radius: 999px;
+}
+
+.music-toggle {
+  width: 36px;
+  height: 36px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #fff;
+  color: #1f1f1b;
+
+  font-size: 15px;
+
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .music-player {
+    bottom: 10px;
+    border-radius: 16px;
+  }
+
+  .music-cover {
+    width: 42px;
+    height: 42px;
+  }
+
+  .music-info strong {
+    font-size: 14px;
+  }
+}
