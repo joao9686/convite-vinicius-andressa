@@ -8,7 +8,7 @@ let animando = false;
 function abrirConvite() {
   if (animando) return;
   animando = true;
-  
+
   iniciarMusica();
 
   cover.classList.add("is-opening");
@@ -78,7 +78,7 @@ if (musicToggle) {
 
     if (weddingMusic.paused) {
       weddingMusic.play();
-      musicToggle.textContent = "⏸";
+      musicToggle.textContent = "❚❚";
     } else {
       weddingMusic.pause();
       musicToggle.textContent = "▶";
@@ -88,9 +88,9 @@ if (musicToggle) {
 
 if (weddingMusic) {
   weddingMusic.addEventListener("timeupdate", () => {
-    if (!weddingMusic.duration) return;
+    if (!weddingMusic.duration || !musicProgressBar) return;
 
-    const progresso = (weddingMusic.currentTime / weddingMusic.duration) * 100;
-    musicProgressBar.style.width = `${progresso}%`;
+    const progress = (weddingMusic.currentTime / weddingMusic.duration) * 100;
+    musicProgressBar.style.width = `${progress}%`;
   });
 }

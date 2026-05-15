@@ -31,6 +31,10 @@
       <div class="cover-content">
 
       
+        <p class="cover-invite-text">
+            Com muito amor<br>
+            convidamos você para
+        </p>
 
         <div class="couple-names">
           <h1>Vinicius</h1>
@@ -136,20 +140,27 @@
 </main>
 <audio id="weddingMusic" src="assets/musica.mp3" loop></audio>
 
-<div class="music-player" id="musicPlayer">
-  <img src="assets/iniciais-av.png" alt="Capa da música" class="music-cover">
+<div class="wedding-music-player" id="musicPlayer">
+  <div class="music-album">
+    <img src="assets/iniciais-av.png" alt="Capa da música">
+  </div>
 
-  <div class="music-info">
-    <strong>Vinicius & Andressa</strong>
-    <span>Nossa música</span>
+  <div class="music-details">
+    <span class="music-label">Nossa Musica</span>
+    <strong>Aliança</strong>
+    <small>Tribalistas</small>
 
-    <div class="music-progress">
-      <div class="music-progress-bar" id="musicProgressBar"></div>
+    <div class="music-line">
+      <div class="music-line-progress" id="musicProgressBar"></div>
     </div>
   </div>
 
-  <button class="music-toggle" id="musicToggle">⏸</button>
+  <button class="music-play-btn" id="musicToggle" type="button">
+    ❚❚
+  </button>
 </div>
+
+<script src="script.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
