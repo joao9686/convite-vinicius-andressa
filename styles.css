@@ -1717,3 +1717,111 @@ body{
     font-size:7px;
   }
 }
+/* GARANTE QUE O BOTÃO NUNCA SAIA DO CONVITE */
+
+.inside-content{
+  display:flex;
+  flex-direction:column;
+}
+
+.back-button{
+  margin-top:auto;
+  flex-shrink:0;
+}
+
+/* MOBILE PEQUENO */
+
+@media (max-height: 740px){
+
+  .invitation,
+  .card{
+    height:auto;
+    min-height:100svh;
+  }
+
+  .inside-content{
+    min-height:100%;
+    padding-bottom:18px;
+  }
+
+  .final-info{
+    margin-bottom:10px;
+  }
+
+  .back-button{
+    margin-top:12px;
+  }
+}
+
+/* TELAS MUITO PEQUENAS */
+
+@media (max-height: 670px){
+
+  .inside-content{
+    padding-top:22px;
+    padding-bottom:14px;
+  }
+
+  .monogram-img{
+    width:52px;
+    margin-bottom:8px;
+  }
+
+  .verse{
+    font-size:10px;
+    line-height:1.1;
+    margin-bottom:8px;
+  }
+
+  .blessing{
+    font-size:11px;
+    margin-bottom:8px;
+  }
+
+  .parents{
+    margin-bottom:10px;
+    gap:14px;
+    font-size:11px;
+  }
+
+  .initials-png{
+    margin-bottom:10px;
+  }
+
+  .letter-a,
+  .letter-v{
+    width:50px;
+  }
+
+  .letter-e{
+    width:22px;
+  }
+
+  .invite-title{
+    font-size:11px;
+    margin-bottom:6px;
+  }
+
+  .event-box{
+    margin-bottom:8px;
+  }
+
+  .event-box div{
+    font-size:11px;
+    padding:5px 4px;
+  }
+
+  .ceremony-info{
+    margin-bottom:7px;
+  }
+
+  .final-info{
+    gap:0;
+  }
+
+  .back-button{
+    margin-top:8px;
+    font-size:7px;
+    padding:4px 10px;
+  }
+}
