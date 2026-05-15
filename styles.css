@@ -1181,28 +1181,144 @@ body{
   opacity: .92;
 }
 
-@media(max-width:480px){
+/* AJUSTE FINAL MOBILE - INTERIOR MAIS EQUILIBRADO */
 
-  .page{
-    padding-bottom: 86px;
+@media (max-width: 480px) {
+
+  .page {
+    padding: 8px 8px 78px;
+    align-items: flex-start;
   }
 
-  .wedding-music-player{
-    top:auto;
-    left:50%;
-    bottom:8px;
-
-    width:min(92%,340px);
-    height:60px;
-
-    padding:8px 10px;
-    border-radius:18px;
-
-    transform:translateX(-50%) translateY(120%);
+  .invitation,
+  .card {
+    height: calc(100svh - 92px);
+    min-height: 590px;
+    max-height: 650px;
   }
 
-  .wedding-music-player.is-visible{
-    transform:translateX(-50%) translateY(0);
+  .inside-content {
+    padding: 26px 24px 14px;
+    justify-content: flex-start;
+  }
+
+  .monogram-img {
+    width: 58px;
+    margin-bottom: 16px;
+  }
+
+  .verse {
+    max-width: 300px;
+    font-size: 11px;
+    line-height: 1.22;
+    margin-bottom: 16px;
+  }
+
+  .blessing {
+    max-width: 310px;
+    font-size: 13.5px;
+    line-height: 1.25;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  .parents {
+    max-width: 300px;
+    gap: 28px;
+    font-size: 14.5px;
+    line-height: 1.15;
+    margin-bottom: 26px;
+  }
+
+  .initials-png {
+    gap: 24px;
+    margin: 0 0 24px;
+  }
+
+  .letter-a,
+  .letter-v {
+    width: 62px;
+  }
+
+  .letter-e {
+    width: 26px;
+  }
+
+  .invite-title {
+    max-width: 310px;
+    font-size: 13.5px;
+    line-height: 1.25;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+  }
+
+  .event-box {
+    max-width: 285px;
+    margin-bottom: 14px;
+  }
+
+  .event-box div {
+    padding: 7px 6px;
+    font-size: 13.5px;
+  }
+
+  .ceremony-info {
+    margin-bottom: 12px;
+  }
+
+  .ceremony-info strong {
+    font-size: 12.5px;
+    letter-spacing: 1px;
+  }
+
+  .ceremony-info p {
+    font-size: 10.5px;
+  }
+
+  .final-info {
+    max-width: 300px;
+    font-size: 11.3px;
+    line-height: 1.16;
+  }
+
+  .final-info p {
+    margin-bottom: 5px;
+  }
+
+  .final-info p:nth-child(2) strong {
+    font-size: 13px;
+  }
+
+  .final-info p:nth-child(4) {
+    font-size: 10px;
+    margin-top: 4px;
+  }
+
+  .back-button {
+    margin-top: 5px;
+    padding: 5px 14px;
+    font-size: 8.5px;
+  }
+
+  .wedding-music-player {
+    height: 56px;
+    width: min(91%, 330px);
+    bottom: 7px;
+    padding: 7px 9px;
+  }
+
+  .music-album {
+    width: 39px;
+    height: 39px;
+    flex-basis: 39px;
+  }
+
+  .music-details strong {
+    font-size: 14px;
+  }
+
+  .music-line {
+    margin-top: 4px;
   }
 }
 
